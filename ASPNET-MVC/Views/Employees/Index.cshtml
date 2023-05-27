@@ -1,0 +1,32 @@
+﻿@model List<ASPNET_MVC.Models.Domain.Employee>
+@{
+}
+
+<h1>Pracownicy</h1>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Id</th>
+			<th>Imię</th>
+			<th>Email</th>
+			<th>Wynagrodzenie</th>
+			<th>Data Urodzenia</th>
+			<th>Dział</th>
+			<th> </th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var employee in Model){
+			<tr>
+				<td>@employee.Id</td>
+				<td>@employee.Name</td>
+				<td>@employee.Email</td>
+				<td>@employee.Salary</td>
+				<td>@employee.DateOfBirth.ToString("dd-MM-yyyy")</td>
+				<td>@employee.Department</td>
+				<td><a href="Employees/View/@employee.Id">Wyświetl</a></td>
+			</tr>
+		}
+	</tbody>
+</table>
